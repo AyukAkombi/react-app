@@ -8,7 +8,7 @@ RUN npm ci --silent
 RUN npm install react-scripts@3.4.1 --silent
 COPY . ./
 RUN npm run build
-#testing && testing
+#testing && testing-on
 
 # Step 2
 FROM nginx:stable-alpine
