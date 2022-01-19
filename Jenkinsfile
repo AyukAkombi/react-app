@@ -41,14 +41,14 @@ pipeline {
             }
             steps {
                     script {
-                        sh "docker pull ayukakombi/react-app:${env.BUILD_NUMBER}"
+                        sh "docker pull akombi2002/react-app:${env.BUILD_NUMBER}"
                         try {
                             sh "docker stop react-app"
                             sh "docker rm react-app"
                         } catch (err) {
                             echo: 'caught error: $err'
                         }
-                        sh "docker run --restart always --name react-app -p 1233:80 -d ayukakombi/react-app:${env.BUILD_NUMBER}"
+                        sh "docker run --restart always --name react-app -p 1233:80 -d akombi2002/react-app:${env.BUILD_NUMBER}"
                     }
             }
         }
@@ -87,7 +87,7 @@ pipeline {
                         } catch (err) {
                             echo: 'caught error: $err'
                         }
-                        sh "docker run --restart always --name react-app -p 1233:80 -d ayukakombi/react-app:${env.BUILD_NUMBER}"
+                        sh "docker run --restart always --name react-app -p 1233:80 -d akombi2002/react-app:${env.BUILD_NUMBER}"
                     }
             }
         }
